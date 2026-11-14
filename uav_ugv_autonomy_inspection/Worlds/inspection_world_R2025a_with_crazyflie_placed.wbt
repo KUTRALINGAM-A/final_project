@@ -1,0 +1,1160 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/bitcraze/crazyflie/protos/Crazyflie.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/husarion/rosbot_xl/protos/RosbotXl.proto"
+
+WorldInfo {
+  title "Indoor Industrial Inspection Environment - UAV UGV"
+  coordinateSystem "EUN"
+  contactProperties [
+    ContactProperties {
+      material1 "floor"
+      material2 "robot"
+      coulombFriction [
+        0.9
+      ]
+    }
+  ]
+}
+Viewpoint {
+  fieldOfView 0.9
+  orientation 0.5947485339719941 0.2699792294242051 0.7572221582981287 4.633691577403276
+  position -8.117004463610634 22.585795089536848 -13.333936236508825
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Solid {
+  translation 0 -0.1 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.43 0.46 0.48
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 30 0.2 30
+      }
+    }
+  ]
+  name "IndustrialFloor"
+  boundingObject Box {
+    size 30 0.2 30
+  }
+}
+Solid {
+  translation 0 1.8 -14.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.72 0.74 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 30 3.6 0.4
+      }
+    }
+  ]
+  name "NorthWall"
+  boundingObject Box {
+    size 30 3.6 0.4
+  }
+}
+Solid {
+  translation -8.5 1.8 14.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.72 0.74 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 13 3.6 0.4
+      }
+    }
+  ]
+  name "SouthWall_Left"
+  boundingObject Box {
+    size 13 3.6 0.4
+  }
+}
+Solid {
+  translation 8.5 1.8 14.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.72 0.74 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 13 3.6 0.4
+      }
+    }
+  ]
+  name "SouthWall_Right"
+  boundingObject Box {
+    size 13 3.6 0.4
+  }
+}
+Solid {
+  translation -14.8 1.8 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.72 0.74 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.4 3.6 30
+      }
+    }
+  ]
+  name "WestWall"
+  boundingObject Box {
+    size 0.4 3.6 30
+  }
+}
+Solid {
+  translation 14.8 1.8 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.72 0.74 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.4 3.6 30
+      }
+    }
+  ]
+  name "EastWall"
+  boundingObject Box {
+    size 0.4 3.6 30
+  }
+}
+Solid {
+  translation -1.7 0.08 13.9
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.95 0.65 0.1
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.25 0.16 0.25
+      }
+    }
+  ]
+  name "EntryMarker_Left"
+  boundingObject Box {
+    size 0.25 0.16 0.25
+  }
+}
+Solid {
+  translation 1.7 0.08 13.9
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.95 0.65 0.1
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.25 0.16 0.25
+      }
+    }
+  ]
+  name "EntryMarker_Right"
+  boundingObject Box {
+    size 0.25 0.16 0.25
+  }
+}
+Solid {
+  translation -10 1.5 -10
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_1"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation -5 1.5 -10
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_2"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation 5 1.5 -10
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_3"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation 10 1.5 -10
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_4"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation -10 1.5 -3
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_5"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation 10 1.5 -3
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_6"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation -10 1.5 5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_7"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation -5 1.5 5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_8"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation 5 1.5 5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_9"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation 10 1.5 5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_10"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation -10 1.5 11
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_11"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation 10 1.5 11
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.62 0.65 0.67
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.55 3 0.55
+      }
+    }
+  ]
+  name "StructuralPillar_12"
+  boundingObject Box {
+    size 0.55 3 0.55
+  }
+}
+Solid {
+  translation -7 1.06 -6
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.2 0.38 0.48
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 2.4 1.8 2.2
+      }
+    }
+  ]
+  name "PumpStation_A"
+  boundingObject Box {
+    size 2.4 1.8 2.2
+  }
+}
+Solid {
+  translation -7 0.08 -6
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.86 0.68 0.2
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 2.65 0.16 2.45
+      }
+    }
+  ]
+  name "PumpStation_A_InspectionBase"
+  boundingObject Box {
+    size 2.65 0.16 2.45
+  }
+}
+Solid {
+  translation -2 1.16 -7
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.28 0.34 0.39
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+      }
+    }
+  ]
+  name "Compressor_B"
+  boundingObject Box {
+  }
+}
+Solid {
+  translation -2 0.08 -7
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.86 0.68 0.2
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 2.25 0.16 2.25
+      }
+    }
+  ]
+  name "Compressor_B_InspectionBase"
+  boundingObject Box {
+    size 2.25 0.16 2.25
+  }
+}
+Solid {
+  translation 7 1.16 -6
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.76 0.48 0.16
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 1.4 2 1.2
+      }
+    }
+  ]
+  name "ControlCabinet_C"
+  boundingObject Box {
+    size 1.4 2 1.2
+  }
+}
+Solid {
+  translation 7 0.08 -6
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.86 0.68 0.2
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 1.65 0.16 1.45
+      }
+    }
+  ]
+  name "ControlCabinet_C_InspectionBase"
+  boundingObject Box {
+    size 1.65 0.16 1.45
+  }
+}
+Solid {
+  translation 7 1.36 1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.26 0.39 0.48
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 3 2.4 2.2
+      }
+    }
+  ]
+  name "MachineCell_D"
+  boundingObject Box {
+    size 3 2.4 2.2
+  }
+}
+Solid {
+  translation 7 0.08 1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.86 0.68 0.2
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 3.25 0.16 2.45
+      }
+    }
+  ]
+  name "MachineCell_D_InspectionBase"
+  boundingObject Box {
+    size 3.25 0.16 2.45
+  }
+}
+Solid {
+  translation -6.5 0.66 7
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.32 0.42 0.46
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 2.4 1 2
+      }
+    }
+  ]
+  name "InspectionBench_E"
+  boundingObject Box {
+    size 2.4 1 2
+  }
+}
+Solid {
+  translation -6.5 0.08 7
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.86 0.68 0.2
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 2.65 0.16 2.25
+      }
+    }
+  ]
+  name "InspectionBench_E_InspectionBase"
+  boundingObject Box {
+    size 2.65 0.16 2.25
+  }
+}
+Solid {
+  translation 1 0.46 8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.76 0.48 0.16
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 1.4 0.6 1.2
+      }
+    }
+  ]
+  name "ElectricalPanel_F"
+  boundingObject Box {
+    size 1.4 0.6 1.2
+  }
+}
+Solid {
+  translation 1 0.08 8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.86 0.68 0.2
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 1.65 0.16 1.45
+      }
+    }
+  ]
+  name "ElectricalPanel_F_InspectionBase"
+  boundingObject Box {
+    size 1.65 0.16 1.45
+  }
+}
+Solid {
+  translation -1.4 0.9 8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.85 0.7 0.1
+        roughness 0.4
+        metalness 0.6
+      }
+      geometry Cylinder {
+        height 1.8
+        radius 0.06
+        subdivision 24
+      }
+    }
+  ]
+  name "HighValve_PipeStand"
+  boundingObject Cylinder {
+    height 1.8
+    radius 0.06
+  }
+}
+Solid {
+  translation -1.4 1.8 8
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.85 0.7 0.1
+        roughness 0.4
+        metalness 0.6
+      }
+      geometry Cylinder {
+        height 0.8
+        radius 0.05
+        subdivision 24
+      }
+    }
+  ]
+  name "HighValve_HorizontalPipe"
+  boundingObject Cylinder {
+    height 0.8
+    radius 0.05
+  }
+}
+Solid {
+  translation -1.0 1.8 8
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.15 0.1
+        roughness 0.3
+        metalness 0.2
+      }
+      geometry Cylinder {
+        height 0.08
+        radius 0.22
+        subdivision 32
+      }
+    }
+  ]
+  name "Elevated_Valve_1"
+  boundingObject Cylinder {
+    height 0.08
+    radius 0.22
+  }
+}
+Solid {
+  translation -1.4 0.015 8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.15 0.1
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 1.2 0.03 1.2
+      }
+    }
+  ]
+  name "HighValve_InspectionMarker"
+  boundingObject Box {
+    size 1.2 0.03 1.2
+  }
+}
+Solid {
+  translation 11 1.55 -7
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.57 0.63 0.67
+        roughness 0.55
+        metalness 0.15
+      }
+      geometry Cylinder {
+        height 3.1
+        radius 0.9
+        subdivision 24
+      }
+    }
+  ]
+  name "StorageTank_A"
+  boundingObject Cylinder {
+    height 3.1
+    radius 0.9
+    subdivision 24
+  }
+}
+Solid {
+  translation 11 1.15 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.57 0.63 0.67
+        roughness 0.55
+        metalness 0.15
+      }
+      geometry Cylinder {
+        height 2.3
+        radius 0.7
+        subdivision 24
+      }
+    }
+  ]
+  name "StorageTank_B"
+  boundingObject Cylinder {
+    height 2.3
+    radius 0.7
+    subdivision 24
+  }
+}
+Solid {
+  translation -6.8 2.4 -11.4
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.75 0.28 0.18
+        roughness 0.55
+        metalness 0.15
+      }
+      geometry Cylinder {
+        height 5.5
+        radius 0.12
+        subdivision 24
+      }
+    }
+  ]
+  name "ElevatedPipe_1"
+  boundingObject Cylinder {
+    height 5.5
+    radius 0.12
+    subdivision 24
+  }
+}
+Solid {
+  translation -6.8 2.8 -11.4
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.18 0.43 0.72
+        roughness 0.55
+        metalness 0.15
+      }
+      geometry Cylinder {
+        height 5.5
+        radius 0.12
+        subdivision 24
+      }
+    }
+  ]
+  name "ElevatedPipe_2"
+  boundingObject Cylinder {
+    height 5.5
+    radius 0.12
+    subdivision 24
+  }
+}
+Solid {
+  translation -6.8 3.2 -11.4
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.68 0.68 0.63
+        roughness 0.55
+        metalness 0.15
+      }
+      geometry Cylinder {
+        height 5.5
+        radius 0.12
+        subdivision 24
+      }
+    }
+  ]
+  name "ElevatedPipe_3"
+  boundingObject Cylinder {
+    height 5.5
+    radius 0.12
+    subdivision 24
+  }
+}
+Solid {
+  translation -9.3 1.75 -11.4
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.38 0.4 0.42
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.18 3.5 0.18
+      }
+    }
+  ]
+  name "PipeSupport_-9_3"
+  boundingObject Box {
+    size 0.18 3.5 0.18
+  }
+}
+Solid {
+  translation -6.8 1.75 -11.4
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.38 0.4 0.42
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.18 3.5 0.18
+      }
+    }
+  ]
+  name "PipeSupport_-6_8"
+  boundingObject Box {
+    size 0.18 3.5 0.18
+  }
+}
+Solid {
+  translation -4.3 1.75 -11.4
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.38 0.4 0.42
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.18 3.5 0.18
+      }
+    }
+  ]
+  name "PipeSupport_-4_3"
+  boundingObject Box {
+    size 0.18 3.5 0.18
+  }
+}
+Solid {
+  translation 2.7 0.65 -2.8
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.2 0.48 0.7
+        roughness 0.55
+        metalness 0.15
+      }
+      geometry Cylinder {
+        height 5
+        radius 0.18
+        subdivision 24
+      }
+    }
+  ]
+  name "LowPipe_Run"
+  boundingObject Cylinder {
+    height 5
+    radius 0.18
+    subdivision 24
+  }
+}
+Solid {
+  translation 0.2 0.3 -2.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.35 0.37 0.39
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.15 0.6 0.15
+      }
+    }
+  ]
+  name "LowPipeSupport_0_2"
+  boundingObject Box {
+    size 0.15 0.6 0.15
+  }
+}
+Solid {
+  translation 2.7 0.3 -2.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.35 0.37 0.39
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.15 0.6 0.15
+      }
+    }
+  ]
+  name "LowPipeSupport_2_7"
+  boundingObject Box {
+    size 0.15 0.6 0.15
+  }
+}
+Solid {
+  translation 5.2 0.3 -2.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.35 0.37 0.39
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.15 0.6 0.15
+      }
+    }
+  ]
+  name "LowPipeSupport_5_2"
+  boundingObject Box {
+    size 0.15 0.6 0.15
+  }
+}
+Solid {
+  translation -3.6 1.35 2.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.76 0.77 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.25 2.7 6
+      }
+    }
+  ]
+  name "CorridorWall_West_1"
+  boundingObject Box {
+    size 0.25 2.7 6
+  }
+}
+Solid {
+  translation -3.6 1.35 10
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.76 0.77 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.25 2.7 3
+      }
+    }
+  ]
+  name "CorridorWall_West_2"
+  boundingObject Box {
+    size 0.25 2.7 3
+  }
+}
+Solid {
+  translation 3.6 1.35 2.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.76 0.77 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.25 2.7 6
+      }
+    }
+  ]
+  name "CorridorWall_East_1"
+  boundingObject Box {
+    size 0.25 2.7 6
+  }
+}
+Solid {
+  translation 3.6 1.35 10
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.76 0.77 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 0.25 2.7 3
+      }
+    }
+  ]
+  name "CorridorWall_East_2"
+  boundingObject Box {
+    size 0.25 2.7 3
+  }
+}
+Solid {
+  translation -7 1.2 5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.76 0.77 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 5 2.4 0.22
+      }
+    }
+  ]
+  name "CrossPartition_Left"
+  boundingObject Box {
+    size 5 2.4 0.22
+  }
+}
+Solid {
+  translation 5.8 1.2 5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.76 0.77 0.75
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 5 2.4 0.22
+      }
+    }
+  ]
+  name "CrossPartition_Right"
+  boundingObject Box {
+    size 5 2.4 0.22
+  }
+}
+Solid {
+  translation -6 0.015 -1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9 0.67 0.12
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 5 0.03 0.08
+      }
+    }
+  ]
+  name "Zone_A_Marker"
+  boundingObject Box {
+    size 5 0.03 0.08
+  }
+}
+Solid {
+  translation 7 0.015 5.8
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.12 0.62 0.42
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 4 0.03 0.08
+      }
+    }
+  ]
+  name "Zone_B_Marker"
+  boundingObject Box {
+    size 4 0.03 0.08
+  }
+}
+Solid {
+  translation 0 0.015 -12.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.12 0.45 0.82
+        roughness 0.85
+        metalness 0
+      }
+      geometry Box {
+        size 5 0.03 0.08
+      }
+    }
+  ]
+  name "Zone_C_Marker"
+  boundingObject Box {
+    size 5 0.03 0.08
+  }
+}
+Crazyflie {
+  translation 0 0.02 0
+  rotation -0.57735 -0.57735 -0.57735 2.094395
+  controller "crazyflie_autonomy"
+}
+RosbotXl {
+  translation 0 0.04 11
+  rotation -0.57735 0.57735 0.57735 2.094395
+  controller "rosbotxl_autonomy"
+  supervisor TRUE
+}

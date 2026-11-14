@@ -1,0 +1,28 @@
+{
+  "request_id": "diadem_insp_0001",
+  "timestamp": 33.408,
+  "ugv_platform": "RigBetel Labs Diadem",
+  "target_name": "Elevated_Valve_1",
+  "findings": {
+    "target_id": "VALVE-HIGH-01",
+    "target_name": "Elevated_Valve_1",
+    "valve_elevation_m": 1.8,
+    "valve_status": "OPERATIONAL",
+    "visual_inspection": "PASS - High-resolution optical scan shows no flange leak, valve stem intact, zero structural corrosion",
+    "standoff_distance_m": 0.47,
+    "surface_temp_c": 42.5,
+    "leak_detected": false,
+    "confidence": 0.98,
+    "inspection_duration_s": 6.0
+  },
+  "uav_position": [
+    -0.49238544364468145,
+    1.8000284473418129,
+    7.756849937096611
+  ],
+  "diadem_position": [
+    6.969962504532995e-09,
+    -0.03546159999999976,
+    9.446833305397611
+  ]
+}

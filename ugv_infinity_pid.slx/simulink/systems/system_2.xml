@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[223, 338, 826, 833]</P>
+  <P Name="SIDHighWatermark">31</P>
+  <Block BlockType="Inport" Name="t" SID="2::1">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="2::26">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[270, 315, 320, 355]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="Outputs">1</P>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="2::25">
+    <P Name="Tag">Stateflow S-Function 2</P>
+    <PortCounts in="1" out="6"/>
+    <P Name="Position">[180, 107, 230, 248]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="PortCounts">[1 6]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">off</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+    <PortProperties>
+      <Port Type="out" Index="2">
+        <P Name="Name">x_des</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">y_des</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="Name">theta_des</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="Name">v_ff</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="Name">w_ff</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Terminator" Name=" Terminator " SID="2::27">
+    <P Name="Position">[460, 326, 480, 344]</P>
+    <P Name="ZOrder">18</P>
+  </Block>
+  <Block BlockType="Outport" Name="x_des" SID="2::5">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">-5</P>
+  </Block>
+  <Block BlockType="Outport" Name="y_des" SID="2::28">
+    <P Name="Position">[460, 136, 480, 154]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="theta_des" SID="2::29">
+    <P Name="Position">[460, 171, 480, 189]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="v_ff" SID="2::30">
+    <P Name="Position">[460, 206, 480, 224]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="w_ff" SID="2::31">
+    <P Name="Position">[460, 246, 480, 264]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">27</P>
+    <P Name="Src">2::1#out:1</P>
+    <P Name="Dst">2::25#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_des</P>
+    <P Name="ZOrder">28</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">2::25#out:2</P>
+    <P Name="Dst">2::5#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">y_des</P>
+    <P Name="ZOrder">29</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">2::25#out:3</P>
+    <P Name="Dst">2::28#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">theta_des</P>
+    <P Name="ZOrder">30</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">2::25#out:4</P>
+    <P Name="Dst">2::29#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">v_ff</P>
+    <P Name="ZOrder">31</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">2::25#out:5</P>
+    <P Name="Dst">2::30#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">w_ff</P>
+    <P Name="ZOrder">32</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">2::25#out:6</P>
+    <P Name="Dst">2::31#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">33</P>
+    <P Name="Src">2::26#out:1</P>
+    <P Name="Dst">2::27#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">34</P>
+    <P Name="Src">2::25#out:1</P>
+    <P Name="Dst">2::26#in:1</P>
+  </Line>
+</System>

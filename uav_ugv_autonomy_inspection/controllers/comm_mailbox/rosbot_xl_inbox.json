@@ -1,0 +1,845 @@
+[
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 10.048,
+    "position": [
+      -5.759256692681476e-12,
+      0.01499019396005371,
+      5.759261521503368e-12
+    ]
+  },
+  {
+    "message_type": "REQUEST_ACK",
+    "request_id": "high_valve_insp_0001",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 10.688,
+    "position": [
+      -6.117510731678702e-12,
+      0.014990193949479482,
+      6.117511444264412e-12
+    ],
+    "status": "accepted"
+  },
+  {
+    "message_type": "RENDEZVOUS_TARGET",
+    "request_id": "high_valve_insp_0001",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 10.72,
+    "target": [
+      -0.5,
+      1.8,
+      8.0
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 15.072000000000001,
+    "position": [
+      -0.011512061831190546,
+      2.297946784387468,
+      0.3654944783350441
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 20.096,
+    "position": [
+      -0.1639172562937306,
+      1.7816218783217546,
+      2.861692984646253
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 25.12,
+    "position": [
+      -0.32781990691509366,
+      1.7989998682610566,
+      5.368340104585172
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 30.144000000000002,
+    "position": [
+      -0.4731275983511445,
+      1.7997576423736803,
+      7.589276825427774
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 35.168,
+    "position": [
+      -0.49238487478369136,
+      1.7999990370349361,
+      7.756849463896565
+    ]
+  },
+  {
+    "message_type": "INSPECTION_REPORT",
+    "request_id": "high_valve_insp_0001",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 36.800000000000004,
+    "position": [
+      -0.49238544366655285,
+      1.8000284473416657,
+      7.756849937554979
+    ],
+    "target_name": "Elevated_Valve_1",
+    "findings": {
+      "target_id": "VALVE-HIGH-01",
+      "target_name": "Elevated_Valve_1",
+      "valve_elevation_m": 1.8,
+      "valve_status": "OPERATIONAL",
+      "visual_inspection": "PASS - High-resolution optical scan shows no flange leak, valve stem intact, zero structural corrosion",
+      "standoff_distance_m": 0.47,
+      "surface_temp_c": 42.5,
+      "leak_detected": false,
+      "confidence": 0.98,
+      "inspection_duration_s": 6.0
+    }
+  },
+  {
+    "message_type": "ARRIVED",
+    "request_id": "high_valve_insp_0001",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 36.800000000000004,
+    "position": [
+      -0.49238544366655285,
+      1.8000284473416657,
+      7.756849937554979
+    ],
+    "status": "arrived"
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 40.192,
+    "position": [
+      -0.4923854529461608,
+      0.9400950586411503,
+      7.756849945260084
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 45.216,
+    "position": [
+      -0.4923854529478913,
+      0.014990019259160558,
+      7.7568499452614414
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 50.24,
+    "position": [
+      -0.4923854529478913,
+      0.014990189999999999,
+      7.7568499452614414
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 55.264,
+    "position": [
+      -0.4923854529478913,
+      0.014990190000000006,
+      7.7568499452614414
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 60.288000000000004,
+    "position": [
+      -0.4923854529478913,
+      0.014990189999999997,
+      7.7568499452614414
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 65.312,
+    "position": [
+      -0.4923854529478913,
+      0.014990190000000006,
+      7.7568499452614414
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 10.048,
+    "position": [
+      -5.759256692681476e-12,
+      0.01499019396005371,
+      5.759261521503368e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 15.072000000000001,
+    "position": [
+      -8.57540686736627e-12,
+      0.014990193822083978,
+      8.575406211104705e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 20.096,
+    "position": [
+      -1.1400451886549463e-11,
+      0.014990193927463988,
+      1.1400441974227613e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 25.12,
+    "position": [
+      -1.4234411836627232e-11,
+      0.014990193908658765,
+      1.4234383960816103e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 30.144000000000002,
+    "position": [
+      -1.707732602510058e-11,
+      0.014990193909293325,
+      1.7077276586928203e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 35.168,
+    "position": [
+      -1.9929194620496078e-11,
+      0.014990193933553164,
+      1.9929166505055427e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 40.192,
+    "position": [
+      -2.279009044161029e-11,
+      0.01499019398327116,
+      2.2790063790048142e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 45.216,
+    "position": [
+      -2.5660012273690886e-11,
+      0.014990193983847105,
+      2.5660000452527448e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 50.24,
+    "position": [
+      -2.8538995593831056e-11,
+      0.014990193993078785,
+      2.8538988384421966e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 55.264,
+    "position": [
+      -3.1427086173930886e-11,
+      0.014990193997826234,
+      3.142707819999191e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 60.288000000000004,
+    "position": [
+      -3.432429458325283e-11,
+      0.014990194029697581,
+      3.4324302510512893e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 65.312,
+    "position": [
+      -3.723064223063754e-11,
+      0.014990194034037542,
+      3.723063410104238e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 70.336,
+    "position": [
+      -4.014618092574306e-11,
+      0.014990193988267262,
+      4.014618266473417e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 75.36,
+    "position": [
+      -4.3070923851211323e-11,
+      0.014990194050838124,
+      4.3070917007498075e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 80.384,
+    "position": [
+      -4.6004905077239376e-11,
+      0.014990194102719245,
+      4.600490340535776e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 85.408,
+    "position": [
+      -4.8948150218984805e-11,
+      0.014990194080827477,
+      4.8948148849438447e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 90.432,
+    "position": [
+      -5.19006827430229e-11,
+      0.0149901940581487,
+      5.1900698432740764e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 95.456,
+    "position": [
+      -5.48625267438e-11,
+      0.014990194093137944,
+      5.486255236949559e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 100.48,
+    "position": [
+      -5.783373737914462e-11,
+      0.014990194087066862,
+      5.783375379750391e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 105.504,
+    "position": [
+      -6.081433610370253e-11,
+      0.014990194157892935,
+      6.081437317143064e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 110.528,
+    "position": [
+      -6.38043423551343e-11,
+      0.014990194193030628,
+      6.380439409216632e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 115.552,
+    "position": [
+      -6.68037952242518e-11,
+      0.0149901941756921,
+      6.680384701410901e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 120.57600000000001,
+    "position": [
+      -6.981272053659047e-11,
+      0.014990194166086263,
+      6.981277433821532e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 125.60000000000001,
+    "position": [
+      -7.283114939430571e-11,
+      0.014990194220356728,
+      7.283120622144984e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 130.624,
+    "position": [
+      -7.585912052525804e-11,
+      0.014990194186043406,
+      7.5859171602211e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 135.648,
+    "position": [
+      -7.889663552673664e-11,
+      0.014990194249306239,
+      7.889669746235318e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 140.672,
+    "position": [
+      -8.194373780769147e-11,
+      0.014990194255115184,
+      8.194381023271321e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 145.696,
+    "position": [
+      -8.500045582106138e-11,
+      0.014990194291631584,
+      8.5000540220051e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 10.048,
+    "position": [
+      -5.759256692681476e-12,
+      0.01499019396005371,
+      5.759261521503368e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 15.072000000000001,
+    "position": [
+      -8.57540686736627e-12,
+      0.014990193822083978,
+      8.575406211104705e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 20.096,
+    "position": [
+      -1.1400451886549463e-11,
+      0.014990193927463988,
+      1.1400441974227613e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 10.048,
+    "position": [
+      -5.759256692681476e-12,
+      0.01499019396005371,
+      5.759261521503368e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 15.072000000000001,
+    "position": [
+      -8.57540686736627e-12,
+      0.014990193822083978,
+      8.575406211104705e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 20.096,
+    "position": [
+      -1.1400451886549463e-11,
+      0.014990193927463988,
+      1.1400441974227613e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 10.048,
+    "position": [
+      -5.759256692681476e-12,
+      0.01499019396005371,
+      5.759261521503368e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 15.072000000000001,
+    "position": [
+      -8.57540686736627e-12,
+      0.014990193822083978,
+      8.575406211104705e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 20.096,
+    "position": [
+      -1.1400451886549463e-11,
+      0.014990193927463988,
+      1.1400441974227613e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 25.12,
+    "position": [
+      -1.4234411836627232e-11,
+      0.014990193908658765,
+      1.4234383960816103e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 30.144000000000002,
+    "position": [
+      -1.707732602510058e-11,
+      0.014990193909293325,
+      1.7077276586928203e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 35.168,
+    "position": [
+      -1.9929194620496078e-11,
+      0.014990193933553164,
+      1.9929166505055427e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 40.192,
+    "position": [
+      -2.279009044161029e-11,
+      0.01499019398327116,
+      2.2790063790048142e-11
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "rosbot_xl",
+    "timestamp": 5.024,
+    "position": [
+      -2.951963276161041e-12,
+      0.014990193888216463,
+      2.9519704442128965e-12
+    ]
+  }
+]

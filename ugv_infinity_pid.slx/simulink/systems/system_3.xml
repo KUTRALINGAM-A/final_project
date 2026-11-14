@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[223, 338, 826, 833]</P>
+  <P Name="SIDHighWatermark">38</P>
+  <Block BlockType="Inport" Name="x_des" SID="3::1">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Inport" Name="y_des" SID="3::28">
+    <P Name="Position">[20, 136, 40, 154]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="theta_des" SID="3::29">
+    <P Name="Position">[20, 171, 40, 189]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="v_ff" SID="3::30">
+    <P Name="Position">[20, 206, 40, 224]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="w_ff" SID="3::31">
+    <P Name="Position">[20, 246, 40, 264]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Inport" Name="x_act" SID="3::32">
+    <P Name="Position">[20, 281, 40, 299]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Inport" Name="y_act" SID="3::33">
+    <P Name="Position">[20, 316, 40, 334]</P>
+    <P Name="ZOrder">24</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Inport" Name="th_act" SID="3::34">
+    <P Name="Position">[20, 351, 40, 369]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="3::26">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[270, 315, 320, 355]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="Outputs">1</P>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="3::25">
+    <P Name="Tag">Stateflow S-Function 1</P>
+    <PortCounts in="8" out="6"/>
+    <P Name="Position">[180, 110, 230, 290]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="PortCounts">[8 6]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">off</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+    <PortProperties>
+      <Port Type="out" Index="2">
+        <P Name="Name">v_cmd</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">yaw_rate_cmd</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="Name">e_long</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="Name">e_lat</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="Name">e_th</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Terminator" Name=" Terminator " SID="3::27">
+    <P Name="Position">[460, 326, 480, 344]</P>
+    <P Name="ZOrder">18</P>
+  </Block>
+  <Block BlockType="Outport" Name="v_cmd" SID="3::5">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">-5</P>
+  </Block>
+  <Block BlockType="Outport" Name="yaw_rate_cmd" SID="3::35">
+    <P Name="Position">[460, 136, 480, 154]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="e_long" SID="3::36">
+    <P Name="Position">[460, 171, 480, 189]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="e_lat" SID="3::37">
+    <P Name="Position">[460, 206, 480, 224]</P>
+    <P Name="ZOrder">28</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="e_th" SID="3::38">
+    <P Name="Position">[460, 246, 480, 264]</P>
+    <P Name="ZOrder">29</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">104</P>
+    <P Name="Src">3::1#out:1</P>
+    <P Name="Dst">3::25#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">105</P>
+    <P Name="Src">3::28#out:1</P>
+    <P Name="Dst">3::25#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">106</P>
+    <P Name="Src">3::29#out:1</P>
+    <P Name="Dst">3::25#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">107</P>
+    <P Name="Src">3::30#out:1</P>
+    <P Name="Dst">3::25#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">108</P>
+    <P Name="Src">3::31#out:1</P>
+    <P Name="Dst">3::25#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">109</P>
+    <P Name="Src">3::32#out:1</P>
+    <P Name="Dst">3::25#in:6</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">110</P>
+    <P Name="Src">3::33#out:1</P>
+    <P Name="Dst">3::25#in:7</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">111</P>
+    <P Name="Src">3::34#out:1</P>
+    <P Name="Dst">3::25#in:8</P>
+  </Line>
+  <Line>
+    <P Name="Name">v_cmd</P>
+    <P Name="ZOrder">112</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">3::25#out:2</P>
+    <P Name="Dst">3::5#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">yaw_rate_cmd</P>
+    <P Name="ZOrder">113</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">3::25#out:3</P>
+    <P Name="Dst">3::35#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">e_long</P>
+    <P Name="ZOrder">114</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">3::25#out:4</P>
+    <P Name="Dst">3::36#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">e_lat</P>
+    <P Name="ZOrder">115</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">3::25#out:5</P>
+    <P Name="Dst">3::37#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">e_th</P>
+    <P Name="ZOrder">116</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">3::25#out:6</P>
+    <P Name="Dst">3::38#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">117</P>
+    <P Name="Src">3::26#out:1</P>
+    <P Name="Dst">3::27#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">118</P>
+    <P Name="Src">3::25#out:1</P>
+    <P Name="Dst">3::26#in:1</P>
+  </Line>
+</System>

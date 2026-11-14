@@ -1,0 +1,262 @@
+[
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 5.024,
+    "position": [
+      1.9579384311744652e-08,
+      -0.03546151300798511,
+      9.939500754598637
+    ]
+  },
+  {
+    "message_type": "ASSISTANCE_REQUEST",
+    "request_id": "diadem_insp_0001",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 7.264,
+    "position": [
+      6.970209574090258e-09,
+      -0.03545210346118777,
+      9.446820395980374
+    ],
+    "target": [
+      -1.0,
+      1.8,
+      8.0
+    ],
+    "assistance_type": "elevated_inspection",
+    "target_name": "Elevated_Valve_1",
+    "inspection_position": [
+      -0.5,
+      1.8,
+      8.0
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 10.048,
+    "position": [
+      6.969962392300881e-09,
+      -0.03546159999986889,
+      9.446833305397565
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 15.072000000000001,
+    "position": [
+      6.9699626518470465e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 20.096,
+    "position": [
+      6.969962575801659e-09,
+      -0.035461599999999704,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 25.12,
+    "position": [
+      6.969962581094672e-09,
+      -0.035461599999999704,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 30.144000000000002,
+    "position": [
+      6.969962546813958e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "ASSISTANCE_COMPLETE",
+    "request_id": "diadem_insp_0001",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 33.408,
+    "status": "complete"
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 35.168,
+    "position": [
+      6.969962513904723e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 40.192,
+    "position": [
+      6.9699624966810455e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 45.216,
+    "position": [
+      6.969962505986527e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 50.24,
+    "position": [
+      6.9699625074303775e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 55.264,
+    "position": [
+      6.9699624978744214e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 60.288000000000004,
+    "position": [
+      6.969962504170052e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 65.312,
+    "position": [
+      6.969962502079813e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 70.336,
+    "position": [
+      6.969962511531273e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 75.36,
+    "position": [
+      6.969962501160169e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 80.384,
+    "position": [
+      6.969962501775628e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 85.408,
+    "position": [
+      6.969962513091463e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 90.432,
+    "position": [
+      6.969962495794905e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_diadem",
+    "sender": "diadem",
+    "recipient": "crazyflie",
+    "timestamp": 95.456,
+    "position": [
+      6.969962501557066e-09,
+      -0.03546159999999976,
+      9.446833305397611
+    ]
+  }
+]

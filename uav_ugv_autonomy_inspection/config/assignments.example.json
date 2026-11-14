@@ -1,0 +1,66 @@
+{
+  "world_frame": "EUN",
+  "coordinate_note": "X=east, Y=up, Z=north; metres",
+  "assignments": {
+    "uav": [
+      {
+        "id": "T01",
+        "name": "Overhead aisle survey",
+        "required": [
+          "aerial_access",
+          "overhead_view"
+        ],
+        "waypoint": [
+          0.0,
+          2.5,
+          0.0
+        ],
+        "priority": 2
+      },
+      {
+        "id": "T03",
+        "name": "Elevated component visual check",
+        "required": [
+          "aerial_access",
+          "visual_inspection"
+        ],
+        "waypoint": [
+          6.0,
+          2.2,
+          5.0
+        ],
+        "priority": 2
+      }
+    ],
+    "ugv": [
+      {
+        "id": "T02",
+        "name": "Ground-level equipment inspection",
+        "required": [
+          "ground_access",
+          "close_range_inspection"
+        ],
+        "waypoint": [
+          -6.0,
+          0.25,
+          -1.0
+        ],
+        "priority": 3
+      },
+      {
+        "id": "T04",
+        "name": "South entrance approach inspection",
+        "required": [
+          "ground_access"
+        ],
+        "waypoint": [
+          0.0,
+          0.25,
+          11.0
+        ],
+        "priority": 1
+      }
+    ],
+    "_unassigned": []
+  }
+}

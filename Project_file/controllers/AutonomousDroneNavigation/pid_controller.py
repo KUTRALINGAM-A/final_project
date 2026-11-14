@@ -27,6 +27,18 @@ class VelocityHeightPIDController:
             "altitude_kp": 10, "altitude_ki": 5, "altitude_kd": 5
         }
 
+        # ── Data logging attributes (updated after each compute_pid call) ──
+        # These store the latest errors so the main controller can log them
+        self.logged_error_vx = 0.0
+        self.logged_error_vy = 0.0
+        self.logged_altitude_error = 0.0
+        self.logged_error_pitch = 0.0
+        self.logged_error_roll = 0.0
+        self.logged_yaw_rate_error = 0.0
+        self.logged_altitude_output = 0.0
+        self.logged_pitch_target = 0.0
+        self.logged_roll_target = 0.0
+
     def compute_pid(self, time_delta, target_vx, target_vy, target_yaw_rate, target_altitude, 
                     current_roll, current_pitch, current_yaw_rate, current_altitude, current_vx, current_vy):
         """
@@ -85,6 +97,17 @@ class VelocityHeightPIDController:
         # Update the previous pitch and roll errors for the next iteration
         self.previous_pitch_error = error_pitch
         self.previous_roll_error = error_roll
+
+        # ── Store all errors for external logging ──
+        self.logged_error_vx = error_vx
+        self.logged_error_vy = error_vy
+        self.logged_altitude_error = altitude_error
+        self.logged_error_pitch = error_pitch
+        self.logged_error_roll = error_roll
+        self.logged_yaw_rate_error = target_yaw_rate - current_yaw_rate
+        self.logged_altitude_output = altitude_output
+        self.logged_pitch_target = pitch_target
+        self.logged_roll_target = roll_target
 
         # Calculate motor commands based on the control outputs
         motor1 = np.clip(altitude_output - roll_output - pitch_output + yaw_output, 0, 600)

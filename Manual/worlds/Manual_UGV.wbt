@@ -1,0 +1,50 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/husarion/rosbot_xl/protos/RosbotXl.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.887228 0.329241 -0.321742 1.05436
+  position 0 -6.2 6.5
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 10 10
+}
+DEF TRAIL Solid {
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.85 1
+          emissiveColor 0 0.85 1
+        }
+      }
+      geometry DEF TRAIL_LINE_SET IndexedLineSet {
+        coord Coordinate {
+          point [
+            0 0 0.025
+            0 0 0.025
+          ]
+        }
+        coordIndex [
+          0 1 -1
+        ]
+      }
+    }
+  ]
+  name "trail"
+}
+DEF UGV RosbotXl {
+  translation 0 0 0.05
+  rotation 0 0 1 0.785398
+  controller "infinity_controller"
+  supervisor TRUE
+}

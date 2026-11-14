@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[23, 11, 1017, 770]</P>
+  <P Name="Open">on</P>
+  <P Name="ReportName">simulink-default.rpt</P>
+  <P Name="SIDHighWatermark">12</P>
+  <Block BlockType="UnitDelay" Name="Delay_Th" SID="12">
+    <P Name="Position">[470, 422, 500, 448]</P>
+    <P Name="ZOrder">32</P>
+    <P Name="InitialCondition">pi/4</P>
+    <P Name="SampleTime">0.032</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="Delay_X" SID="10">
+    <P Name="Position">[470, 342, 500, 368]</P>
+    <P Name="ZOrder">30</P>
+    <P Name="InitialCondition">0.0</P>
+    <P Name="SampleTime">0.032</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="Delay_Y" SID="11">
+    <P Name="Position">[470, 382, 500, 408]</P>
+    <P Name="ZOrder">31</P>
+    <P Name="InitialCondition">0.0</P>
+    <P Name="SampleTime">0.032</P>
+  </Block>
+  <Block BlockType="DigitalClock" Name="Digital Clock" SID="1">
+    <P Name="Position">[30, 110, 80, 150]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="SampleTime">0.032</P>
+  </Block>
+  <Block BlockType="Mux" Name="Mux_Errors" SID="5">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[600, 260, 605, 330]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Inputs">3</P>
+    <P Name="DisplayOption">bar</P>
+  </Block>
+  <Block BlockType="Mux" Name="Mux_Wheels" SID="6">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[810, 160, 815, 220]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Inputs">2</P>
+    <P Name="DisplayOption">bar</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="PID Tracking Controller" SID="3">
+    <PortCounts in="8" out="5"/>
+    <P Name="Position">[360, 76, 540, 279]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_3"/>
+    <P Name="ErrorFcn">Stateflow.Translate.translate</P>
+    <P Name="PermitHierarchicalResolution">ExplicitOnly</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="SFBlockType">MATLAB Function</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">v_cmd</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_3"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="Robot Plant" SID="4">
+    <PortCounts in="2" out="5"/>
+    <P Name="Position">[610, 84, 770, 226]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_4"/>
+    <P Name="ErrorFcn">Stateflow.Translate.translate</P>
+    <P Name="PermitHierarchicalResolution">ExplicitOnly</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="SFBlockType">MATLAB Function</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">x_act</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_4"/>
+  </Block>
+  <Block BlockType="Scope" Name="Tracking Errors" SID="7">
+    <PortCounts in="1"/>
+    <P Name="Position">[640, 275, 680, 315]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="GraphicalSettings">{&quot;GraphicalSettings&quot;:{&quot;LegacySettings&quot;:true,&quot;Style&quot;:{&quot;Style&quot;:{&quot;PlotType&quot;:&quot;Auto&quot;}}}}</P>
+    <P Name="WasSavedAsWebScope">on</P>
+    <P Name="Floating">off</P>
+    <P Name="NumInputPorts">1</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Trajectory Generator" SID="2">
+    <PortCounts in="1" out="5"/>
+    <P Name="Position">[140, 84, 290, 186]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_2"/>
+    <P Name="ErrorFcn">Stateflow.Translate.translate</P>
+    <P Name="PermitHierarchicalResolution">ExplicitOnly</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="SFBlockType">MATLAB Function</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">x_des</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_2"/>
+  </Block>
+  <Block BlockType="Scope" Name="Wheel Speeds" SID="8">
+    <PortCounts in="1"/>
+    <P Name="Position">[850, 170, 890, 210]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="GraphicalSettings">{&quot;GraphicalSettings&quot;:{&quot;LegacySettings&quot;:true,&quot;Style&quot;:{&quot;Style&quot;:{&quot;PlotType&quot;:&quot;Auto&quot;}}}}</P>
+    <P Name="WasSavedAsWebScope">on</P>
+    <P Name="Floating">off</P>
+    <P Name="NumInputPorts">1</P>
+  </Block>
+  <Block BlockType="Record" Name="XY Trajectory" SID="9">
+    <PortCounts in="2"/>
+    <P Name="Position">[840, 70, 900, 130]</P>
+    <P Name="ZOrder">29</P>
+    <P Name="NumPorts" Class="double">2.0</P>
+    <P Name="FileSettingsInternal">{&quot;entries&quot;:[{&quot;content&quot;:{&quot;excelSettings&quot;:{&quot;content&quot;:{},&quot;type&quot;:&quot;Streamout.ExcelSettings&quot;},&quot;parquetSettings&quot;:{&quot;content&quot;:{},&quot;type&quot;:&quot;Streamout.ParquetSettings&quot;}},&quot;type&quot;:&quot;Streamout.FileSettingStorage&quot;,&quot;uuid&quot;:&quot;&quot;}],&quot;packageUris&quot;:[&quot;http:\/\/schema.mathworks.com\/mf0\/streamout_blocks\/R2020a&quot;],&quot;version&quot;:&quot;1.0&quot;}</P>
+    <P Name="FrameSettings" Class="logical">[0, 0]</P>
+    <P Name="Layout">[1 1]</P>
+    <P Name="SignalsInternal">{&quot;entries&quot;:[{&quot;content&quot;:{&quot;signals&quot;:[{&quot;content&quot;:{&quot;blockPath&quot;:[],&quot;dimensions&quot;:[1],&quot;domain&quot;:&quot;&quot;,&quot;lineColor&quot;:&quot;#a2142f&quot;,&quot;plots&quot;:[ 1 ],&quot;port&quot;:1,&quot;signalID&quot;:1,&quot;signalName&quot;:&quot;XY Graph:1&quot;},&quot;type&quot;:&quot;RecordBlkView.Signal&quot;,&quot;uuid&quot;:&quot;&quot;},{&quot;content&quot;:{&quot;blockPath&quot;:[],&quot;dimensions&quot;:[1],&quot;domain&quot;:&quot;&quot;,&quot;lineColor&quot;:&quot;#139fff&quot;,&quot;plots&quot;:[ 1 ],&quot;port&quot;:2,&quot;signalID&quot;:2,&quot;signalName&quot;:&quot;XY Graph:2&quot;},&quot;type&quot;:&quot;RecordBlkView.Signal&quot;,&quot;uuid&quot;:&quot;&quot;}]},&quot;type&quot;:&quot;RecordBlkView.InputSignals&quot;,&quot;uuid&quot;:&quot;&quot;}],&quot;packageUris&quot;:[&quot;http:\/\/schema.mathworks.com\/mf0\/streamout_blocks\/R2020a&quot;],&quot;version&quot;:&quot;1.0&quot;}</P>
+    <Object PropName="PlotPreferences" ObjectID="1" ClassName="Simulink.record.internal.PlotPreferences">
+      <Object PropName="Time" ObjectID="2" ClassName="Simulink.record.internal.TimePlotPreferences">
+        <P Name="TicksColor" Class="double">[0.0, 0.0, 0.0]</P>
+        <P Name="TicksPosition" Class="char">Outside</P>
+        <P Name="TickLabels" Class="char">All</P>
+        <P Name="PlotColor" Class="double">[1.0, 1.0, 1.0]</P>
+        <P Name="GridColor" Class="double">[0.81568627450980391, 0.82352941176470584, 0.82745098039215681]</P>
+        <P Name="LegendPosition" Class="char">TopLeft</P>
+        <P Name="Markers" Class="char">Hide</P>
+        <P Name="GridLines" Class="char">All</P>
+        <P Name="PlotBorder" Class="char">Show</P>
+        <P Name="UpdateMode" Class="char">Wrap</P>
+        <P Name="TimeSpan" Class="char">Auto</P>
+        <P Name="TLimits" Class="double">[0.0, 100.0]</P>
+        <P Name="YLimits" Class="double">[-3.0, 3.0]</P>
+        <P Name="ScaleAtStop" Class="logical">1</P>
+      </Object>
+      <Object PropName="XY" ObjectID="3" ClassName="Simulink.record.internal.XYPlotPreferences">
+        <P Name="TicksColor" Class="double">[0.0, 0.0, 0.0]</P>
+        <P Name="PlotColor" Class="double">[1.0, 1.0, 1.0]</P>
+        <P Name="GridColor" Class="double">[0.81568627450980391, 0.82352941176470584, 0.82745098039215681]</P>
+        <P Name="Line" Class="char">Hide</P>
+        <P Name="LineColor" Class="char">YColor</P>
+        <P Name="Markers" Class="char">Show</P>
+        <P Name="MarkerBorder" Class="char">XColor</P>
+        <P Name="MarkerFill" Class="char">YColor</P>
+        <P Name="MarkerSize" Class="double">3.0</P>
+        <P Name="TrendLine" Class="char">Hide</P>
+        <P Name="TrendLineColor" Class="double">[1.0, 0.0, 0.0]</P>
+        <P Name="TrendLineWeight" Class="double">2.5</P>
+        <P Name="TrendLineType" Class="char">Linear</P>
+        <P Name="PolynomialOrder" Class="double">3.0</P>
+        <P Name="GridLines" Class="char">On</P>
+        <Object PropName="LocalXYSettings" ObjectID="4" ClassName="Simulink.record.internal.LocalXYSettings">
+          <P Name="SubPlotID" Class="int32">1</P>
+          <P Name="isAutoLimits" Class="logical">1</P>
+          <P Name="limits" Class="double">[0.0, 10.0, -5.0, 5.0]</P>
+        </Object>
+      </Object>
+      <Object PropName="Map" ObjectID="5" ClassName="Simulink.record.internal.MapPlotPreferences">
+        <P Name="Type" Class="char">Street</P>
+      </Object>
+      <P Name="Sparklines" Class="double">[]</P>
+    </Object>
+    <P Name="CanvasColor" Ref="bdmxdata:CanvasColor_9"/>
+    <P Name="VisualizationBindings">{&quot;xyplotplugin&quot;:{&quot;info&quot;:[{&quot;series&quot;:[{&quot;bindingParametersList&quot;:[{&quot;parameter&quot;:&quot;X-Axis&quot;,&quot;signalID&quot;:1,&quot;signalName&quot;:&quot;XY Graph:1&quot;},{&quot;parameter&quot;:&quot;Y-Axis&quot;,&quot;signalID&quot;:2,&quot;signalName&quot;:&quot;XY Graph:2&quot;}],&quot;seriesID&quot;:0}],&quot;subplotID&quot;:1}]}}</P>
+    <P Name="CompatibilityTag">XY</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">1#out:1</P>
+    <P Name="Points">[20, 0; 0, 5]</P>
+    <P Name="Dst">2#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">2#out:1</P>
+    <P Name="Points">[25, 0; 0, -5]</P>
+    <P Name="Dst">3#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">2#out:2</P>
+    <P Name="Dst">3#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">2#out:3</P>
+    <P Name="Points">[25, 0; 0, 5]</P>
+    <P Name="Dst">3#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">2#out:4</P>
+    <P Name="Points">[25, 0; 0, 10]</P>
+    <P Name="Dst">3#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">2#out:5</P>
+    <P Name="Points">[25, 0; 0, 15]</P>
+    <P Name="Dst">3#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">3#out:1</P>
+    <P Name="Points">[25, 0; 0, 20]</P>
+    <P Name="Dst">4#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">3#out:2</P>
+    <P Name="Points">[25, 0; 0, 50]</P>
+    <P Name="Dst">4#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">4#out:1</P>
+    <P Name="Points">[0, 0]</P>
+    <Branch>
+      <P Name="ZOrder">9</P>
+      <P Name="Points">[5, 0; 0, 240; -325, 0]</P>
+      <P Name="Dst">10#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">16</P>
+      <P Name="Points">[25, 0; 0, -10]</P>
+      <P Name="Dst">9#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">4#out:2</P>
+    <P Name="Points">[0, 0]</P>
+    <Branch>
+      <P Name="ZOrder">10</P>
+      <P Name="Points">[5, 0; 0, 250; -325, 0]</P>
+      <P Name="Dst">11#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">18</P>
+      <P Name="Points">[25, 0; 0, -10]</P>
+      <P Name="Dst">9#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">4#out:3</P>
+    <P Name="Points">[5, 0; 0, 260; -325, 0]</P>
+    <P Name="Dst">12#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">10#out:1</P>
+    <P Name="Points">[0, -70; -160, 0]</P>
+    <P Name="Dst">3#in:6</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">11#out:1</P>
+    <P Name="Points">[0, -20; -160, 0]</P>
+    <P Name="Dst">3#in:7</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">12#out:1</P>
+    <P Name="Points">[0, -20; -160, 0]</P>
+    <P Name="Dst">3#in:8</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">19</P>
+    <P Name="Src">3#out:3</P>
+    <P Name="Points">[15, 0; 0, 90]</P>
+    <P Name="Dst">5#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">20</P>
+    <P Name="Src">3#out:4</P>
+    <P Name="Points">[5, 0; 0, 75]</P>
+    <P Name="Dst">5#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">3#out:5</P>
+    <P Name="Points">[0, 25; -5, 0; 0, 35]</P>
+    <P Name="Dst">5#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">22</P>
+    <P Name="Src">5#out:1</P>
+    <P Name="Dst">7#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">23</P>
+    <P Name="Src">4#out:4</P>
+    <P Name="Points">[20, 0]</P>
+    <P Name="Dst">6#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">24</P>
+    <P Name="Src">4#out:5</P>
+    <P Name="Points">[20, 0]</P>
+    <P Name="Dst">6#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">25</P>
+    <P Name="Src">6#out:1</P>
+    <P Name="Dst">8#in:1</P>
+  </Line>
+</System>

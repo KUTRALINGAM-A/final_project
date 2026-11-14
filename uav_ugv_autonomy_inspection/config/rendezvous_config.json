@@ -1,0 +1,133 @@
+{
+  "coordinate_system": "EUN",
+  "coordinate_note": "X=east, Y=up, Z=north; metres. Ground plane is X-Z, altitude is Y.",
+  "vertical_axis_index": 1,
+  "horizontal_axes_indices": [0, 2],
+  "ground_level_y": 0.0,
+
+  "uav": {
+    "name": "Crazyflie",
+    "safe_hover_height_m": 1.0,
+    "rendezvous_vertical_separation_m": 1.5,
+    "max_altitude_m": 3.0,
+    "min_altitude_m": 0.3,
+    "takeoff_target_altitude_m": 1.0,
+    "max_horizontal_speed_mps": 0.5,
+    "max_vertical_speed_mps": 0.3,
+    "arrival_tolerance_horizontal_m": 0.3,
+    "arrival_tolerance_vertical_m": 0.15,
+    "hover_tolerance_m": 0.1,
+    "target_update_deadband_m": 0.3,
+    "motor_names": ["m1_motor", "m2_motor", "m3_motor", "m4_motor"],
+    "motor_directions": [-1, 1, -1, 1],
+    "sensor_names": ["gps", "gyro", "inertial_unit", "camera",
+                     "range_front", "range_back", "range_left", "range_right"],
+    "pid_gains": {
+      "kp_att_rp": 0.5,
+      "kd_att_rp": 0.1,
+      "kp_att_y": 1.0,
+      "kd_att_y": 0.5,
+      "kp_vel_xy": 2.0,
+      "kd_vel_xy": 0.5,
+      "kp_z": 10.0,
+      "ki_z": 5.0,
+      "kd_z": 5.0
+    }
+  },
+
+  "ugv": {
+    "name": "rosbot_xl",
+    "max_speed_mps": 0.35,
+    "max_wheel_speed_radps": 10.0,
+    "arrival_tolerance_m": 0.4,
+    "approach_slowdown_distance_m": 1.0,
+    "obstacle_stop_distance_m": 0.35,
+    "obstacle_slowdown_distance_m": 1.0,
+    "target_update_deadband_m": 0.5,
+    "wheel_radius_m": 0.05,
+    "wheel_base_m": 0.17,
+    "track_width_m": 0.27,
+    "motor_names": ["fl_wheel_joint", "fr_wheel_joint", "rl_wheel_joint", "rr_wheel_joint"],
+    "sensor_names": ["front left wheel motor sensor", "front right wheel motor sensor",
+                     "rear left wheel motor sensor", "rear right wheel motor sensor",
+                     "laser", "imu accelerometer", "imu gyro", "imu compass", "imu inertial_unit"],
+    "navigation": {
+      "kp_linear": 1.0,
+      "kp_angular": 3.0,
+      "heading_tolerance_rad": 0.1,
+      "lidar_fov_deg": 360,
+      "lidar_obstacle_sectors": 12,
+      "obstacle_avoidance_gain": 1.5
+    }
+  },
+
+  "diadem": {
+    "name": "diadem",
+    "max_speed_mps": 0.50,
+    "max_wheel_speed_radps": 10.0,
+    "arrival_tolerance_m": 0.45,
+    "approach_slowdown_distance_m": 1.5,
+    "obstacle_stop_distance_m": 0.50,
+    "obstacle_slowdown_distance_m": 1.5,
+    "target_update_deadband_m": 0.5,
+    "wheel_radius_m": 0.18,
+    "wheel_base_m": 0.56,
+    "track_width_m": 0.60,
+    "motor_names": ["FL_wheel_joint", "FR_wheel_joint", "RL_wheel_joint", "RR_wheel_joint"],
+    "sensor_names": ["FL_wheel_sensor", "FR_wheel_sensor", "RL_wheel_sensor", "RR_wheel_sensor",
+                     "laser", "imu accelerometer", "imu gyro", "imu compass", "imu inertial_unit"],
+    "navigation": {
+      "kp_linear": 1.0,
+      "kp_angular": 3.0,
+      "heading_tolerance_rad": 0.1,
+      "lidar_fov_deg": 360,
+      "lidar_obstacle_sectors": 12,
+      "obstacle_avoidance_gain": 1.5
+    }
+  },
+
+  "communication": {
+    "channel": 1,
+    "poll_interval_ms": 64,
+    "request_timeout_s": 90.0,
+    "retry_count": 3,
+    "retry_interval_s": 2.0,
+    "heartbeat_interval_s": 5.0,
+    "message_ttl_s": 120.0,
+    "mailbox_dir": "../../controllers/comm_mailbox"
+  },
+
+  "test_scenarios": {
+    "ugv_calls_uav_delay_s": 5.0,
+    "uav_calls_ugv_delay_s": 45.0,
+    "demo_mode": "ugv_calls_uav_high_valve"
+  },
+
+  "capabilities": {
+    "uav": {
+      "min_inspection_height_m": 0.8,
+      "max_inspection_height_m": 2.5,
+      "aerial_mobility": true,
+      "sensors": ["camera", "multiranger_tof"]
+    },
+    "ugv": {
+      "min_inspection_height_m": 0.0,
+      "max_inspection_height_m": 0.8,
+      "aerial_mobility": false,
+      "sensors": ["laser_lidar", "wheel_encoders"]
+    }
+  },
+
+  "inspection_targets": {
+    "high_valve_1": {
+      "id": "VALVE-HIGH-01",
+      "name": "Elevated_Valve_1",
+      "valve_position": [-1.0, 1.8, 8.0],
+      "uav_inspection_position": [-0.5, 1.8, 8.0],
+      "ugv_station_position": [0.0, 0.18, 8.8],
+      "required_capability": "aerial_vantage",
+      "elevation_m": 1.8,
+      "inspection_duration_s": 6.0
+    }
+  }
+}

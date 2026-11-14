@@ -6,6 +6,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/humans/pedestrian/protos/Pedestrian.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/buildings/protos/Windmill.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/husarion/rosbot_xl/protos/RosbotXl.proto"
 
 WorldInfo {
   info [
@@ -16,13 +17,17 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.18433787137211416 -0.003947351667025685 0.9828550084284124 3.1836948592412706
-  position 152.4884182907353 47.32403992013105 61.07231680754685
+  position 31.74 -9.32 1.23
   follow "Crazyflie"
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
-  luminosity 0
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.3 -1 -0.5
+  castShadows TRUE
 }
 Solid {
   translation -5.000000000873214 41.99999999912678 0.0961555263648918
@@ -1552,6 +1557,36 @@ Windmill {
   translation 3.27 -19.08 0
   rotation 0 0 1 -1.5707953071795862
   name "windmill(1)"
+}
+DEF TRAIL Solid {
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0.85 1
+          emissiveColor 0 0.85 1
+        }
+      }
+      geometry DEF TRAIL_LINE_SET IndexedLineSet {
+        coord Coordinate {
+          point [
+            26 -11 0.025
+            26 -11 0.025
+          ]
+        }
+        coordIndex [
+          0 1 -1
+        ]
+      }
+    }
+  ]
+  name "trail"
+}
+DEF UGV RosbotXl {
+  translation 26 -11 0.05
+  rotation 0 0 1 0.785398
+  controller "infinity_controller"
+  supervisor TRUE
 }
 RectangleArena {
   floorSize 100 100

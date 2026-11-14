@@ -1,0 +1,281 @@
+[
+  {
+    "message_type": "REQUEST_ACK",
+    "request_id": "diadem_insp_0001",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 7.296,
+    "position": [
+      -4.220407885653385e-12,
+      0.014990193799948072,
+      4.220419630778672e-12
+    ],
+    "status": "accepted"
+  },
+  {
+    "message_type": "RENDEZVOUS_TARGET",
+    "request_id": "diadem_insp_0001",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 7.328,
+    "target": [
+      -0.5,
+      1.8,
+      8.0
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 10.048,
+    "position": [
+      -1.7352228034365974e-07,
+      1.021745636303313,
+      1.7352229182768058e-07
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 15.072000000000001,
+    "position": [
+      -0.11099220689245967,
+      1.862917047257974,
+      2.047412651595629
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 20.096,
+    "position": [
+      -0.2745493405681882,
+      1.80052773220757,
+      4.554080778650667
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 25.12,
+    "position": [
+      -0.43852898680709024,
+      1.7998123691582668,
+      7.060463402697601
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 30.144000000000002,
+    "position": [
+      -0.49234943545233867,
+      1.8003563512626781,
+      7.756819392976749
+    ]
+  },
+  {
+    "message_type": "INSPECTION_REPORT",
+    "request_id": "diadem_insp_0001",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 33.408,
+    "position": [
+      -0.49238544364468145,
+      1.8000284473418129,
+      7.756849937096611
+    ],
+    "target_name": "Elevated_Valve_1",
+    "findings": {
+      "target_id": "VALVE-HIGH-01",
+      "target_name": "Elevated_Valve_1",
+      "valve_elevation_m": 1.8,
+      "valve_status": "OPERATIONAL",
+      "visual_inspection": "PASS - High-resolution optical scan shows no flange leak, valve stem intact, zero structural corrosion",
+      "standoff_distance_m": 0.47,
+      "surface_temp_c": 42.5,
+      "leak_detected": false,
+      "confidence": 0.98,
+      "inspection_duration_s": 6.0
+    }
+  },
+  {
+    "message_type": "ARRIVED",
+    "request_id": "diadem_insp_0001",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 33.408,
+    "position": [
+      -0.49238544364468145,
+      1.8000284473418129,
+      7.756849937096611
+    ],
+    "status": "arrived"
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 35.168,
+    "position": [
+      -0.49238545282166546,
+      1.3359029681310688,
+      7.756849944716653
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 40.192,
+    "position": [
+      -0.4923854529304283,
+      0.10014070622999785,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 45.216,
+    "position": [
+      -0.49238545293042957,
+      0.014990190000000044,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 50.24,
+    "position": [
+      -0.49238545293042957,
+      0.01499019,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 55.264,
+    "position": [
+      -0.49238545293042957,
+      0.014990189999999997,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 60.288000000000004,
+    "position": [
+      -0.49238545293042957,
+      0.014990190000000002,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 65.312,
+    "position": [
+      -0.49238545293042957,
+      0.014990189999999997,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 70.336,
+    "position": [
+      -0.49238545293042957,
+      0.014990189999999997,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 75.36,
+    "position": [
+      -0.49238545293042957,
+      0.014990189999999999,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 80.384,
+    "position": [
+      -0.49238545293042957,
+      0.014990189999999999,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 85.408,
+    "position": [
+      -0.49238545293042957,
+      0.014990189999999995,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 90.432,
+    "position": [
+      -0.49238545293042957,
+      0.014990189999999997,
+      7.756849944806958
+    ]
+  },
+  {
+    "message_type": "HEARTBEAT",
+    "request_id": "hb_crazyflie",
+    "sender": "crazyflie",
+    "recipient": "diadem",
+    "timestamp": 95.456,
+    "position": [
+      -0.49238545293042957,
+      0.014990189999999997,
+      7.756849944806958
+    ]
+  }
+]

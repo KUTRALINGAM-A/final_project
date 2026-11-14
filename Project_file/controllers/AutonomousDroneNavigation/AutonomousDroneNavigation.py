@@ -1,11 +1,80 @@
 
 import math
 import heapq
+import csv
+import os
+import sys
 import itertools  # For tie-breaking
 from controller import Robot
 from math import cos, sin
 from pid_controller import VelocityHeightPIDController
 from wall_following import WallFollowing
+
+# ── ROS 2 Integration for UAV (Callsign: Tiger) ──
+try:
+    import rclpy
+    from rclpy.node import Node as RosNode
+    from std_msgs.msg import String as RosString
+    HAS_ROS2 = True
+except ImportError:
+    HAS_ROS2 = False
+
+
+class DroneTigerNode(RosNode):
+    """ROS 2 Node representing the UAV (Tiger) communicating with UGV (Charlie)."""
+    def __init__(self):
+        super().__init__('drone_node')
+        self.pub_to_charlie = self.create_publisher(RosString, '/tiger_to_charlie', 10)
+        self.sub_from_charlie = self.create_subscription(
+            RosString, '/charlie_to_tiger', self.charlie_callback, 10
+        )
+        self.handshake_step = 0
+        self.handshake_complete = False
+        self.last_callout_time = -10.0
+        self.get_logger().info('🚁 [Tiger / Drone Node] Online on ROS 2.')
+        print('🚁 [Tiger / Drone Node] Online and listening on ROS 2.', flush=True)
+
+    def charlie_callback(self, msg):
+        text = msg.data.strip()
+        banner = f"\n{'='*48}\n🚁 [Tiger / Drone] RECEIVED from Charlie:\n{text}\n{'='*48}"
+        print(banner, flush=True)
+        self.get_logger().info(f"[Tiger <- Charlie] RECEIVED:\n{text}")
+
+        if "message received" in text and self.handshake_step == 1:
+            self.handshake_step = 2
+            reply_text = "tiger to charlie\ncommunication successful"
+            reply_msg = RosString()
+            reply_msg.data = reply_text
+            self.pub_to_charlie.publish(reply_msg)
+            reply_banner = f"\n{'='*48}\n🚁 [Tiger / Drone] TRANSMITTING to Charlie:\n{reply_text}\n{'='*48}"
+            print(reply_banner, flush=True)
+            self.get_logger().info(f"[Tiger -> Charlie] TRANSMITTING:\n{reply_text}")
+            success_msg = "✅ 🚁 [Tiger / Drone] Communication handshake completed successfully!\n"
+            print(success_msg, flush=True)
+            self.get_logger().info("✅ [Tiger] Communication handshake completed successfully!")
+            self.handshake_complete = True
+
+    def step_communication(self, current_time):
+        # Step 1: Send initial callout once simulation has started
+        if self.handshake_step == 0 and current_time >= 0.5:
+            self.handshake_step = 1
+            self.last_callout_time = current_time
+            msg_text = "tiger to charlie\ntiger in\ntiger in"
+            msg = RosString()
+            msg.data = msg_text
+            self.pub_to_charlie.publish(msg)
+            banner = f"\n{'='*48}\n🚁 [Tiger / Drone] TRANSMITTING to Charlie:\n{msg_text}\n{'='*48}"
+            print(banner, flush=True)
+            self.get_logger().info(f"[Tiger -> Charlie] TRANSMITTING:\n{msg_text}")
+        elif self.handshake_step == 1 and not self.handshake_complete:
+            # Retry callout every 2.0s until Charlie responds
+            if current_time - self.last_callout_time >= 2.0:
+                self.last_callout_time = current_time
+                msg = RosString()
+                msg.data = "tiger to charlie\ntiger in\ntiger in"
+                self.pub_to_charlie.publish(msg)
+                print(f"🔄 🚁 [Tiger / Drone] Retrying callout to Charlie...", flush=True)
+                self.get_logger().info("[Tiger -> Charlie] Retrying callout...")
 
 
 class Node:
@@ -499,8 +568,57 @@ if __name__ == '__main__':
     flag_obs = 0
     flag_goal = 0
     
+    # ── Open CSV log file for PID data logging ──
+    log_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pid_log.csv')
+    csv_file = open(log_file_path, 'w', newline='')
+    csv_writer = csv.writer(csv_file)
+    # Write CSV header
+    csv_writer.writerow([
+        'time', 'mode',
+        'altitude', 'target_altitude', 'altitude_error',
+        'vx', 'vy', 'target_vx', 'target_vy', 'error_vx', 'error_vy',
+        'roll', 'pitch', 'yaw_rate',
+        'pitch_target', 'roll_target',
+        'error_pitch', 'error_roll', 'yaw_rate_error',
+        'x_global', 'y_global',
+        'motor1', 'motor2', 'motor3', 'motor4',
+        'range_front', 'range_left', 'range_right', 'range_back'
+    ])
+    print(f"📊 PID data logging started → {log_file_path}")
+    
+    def log_pid_data(mode_label, sim_time, alt, h_des, vx_b, vy_b, fwd_des, side_des,
+                     r, p, yr, x_g, y_g, mpower, rf, rl, rr, rb, pid_ctrl):
+        """Write one row of PID data to the CSV log file."""
+        csv_writer.writerow([
+            f"{sim_time:.4f}", mode_label,
+            f"{alt:.6f}", f"{h_des:.6f}", f"{pid_ctrl.logged_altitude_error:.6f}",
+            f"{vx_b:.6f}", f"{vy_b:.6f}", f"{fwd_des:.6f}", f"{side_des:.6f}",
+            f"{pid_ctrl.logged_error_vx:.6f}", f"{pid_ctrl.logged_error_vy:.6f}",
+            f"{r:.6f}", f"{p:.6f}", f"{yr:.6f}",
+            f"{pid_ctrl.logged_pitch_target:.6f}", f"{pid_ctrl.logged_roll_target:.6f}",
+            f"{pid_ctrl.logged_error_pitch:.6f}", f"{pid_ctrl.logged_error_roll:.6f}",
+            f"{pid_ctrl.logged_yaw_rate_error:.6f}",
+            f"{x_g:.6f}", f"{y_g:.6f}",
+            f"{mpower[0]:.4f}", f"{mpower[1]:.4f}", f"{mpower[2]:.4f}", f"{mpower[3]:.4f}",
+            f"{rf:.4f}", f"{rl:.4f}", f"{rr:.4f}", f"{rb:.4f}"
+        ])
+    
+    # ── Initialize ROS 2 Node for Drone (Tiger) ──
+    drone_ros = None
+    if HAS_ROS2:
+        try:
+            rclpy.init(args=None)
+            drone_ros = DroneTigerNode()
+            print("📡 [ROS 2] Drone node (Tiger) initialized.", flush=True)
+        except Exception as e:
+            print(f"⚠️ [ROS 2] Drone node init notice: {e}", flush=True)
+
     # Main control loop of the robot
     while robot.step(timestep) != -1:
+        # Step ROS 2 callbacks and communication
+        if drone_ros is not None:
+            rclpy.spin_once(drone_ros, timeout_sec=0.001)
+            drone_ros.step_communication(robot.getTime())
         
         # Calculate the time difference since the last loop iteration
         dt = robot.getTime() - past_time
@@ -596,6 +714,13 @@ if __name__ == '__main__':
             m2_motor.setVelocity(motor_power[1])
             m3_motor.setVelocity(-motor_power[2])
             m4_motor.setVelocity(motor_power[3])
+        
+            # ── Log PID data (wall following mode) ──
+            log_pid_data('wall_following', robot.getTime(), altitude, height_desired,
+                         v_x, v_y, forward_desired, sideways_desired,
+                         roll, pitch, yaw_rate, x_global, y_global, motor_power,
+                         range_front_value, range_left_value, range_right_value,
+                         range_back_value, PID_crazyflie)
         
             # Update the past time and global position for the next iteration
             past_time = robot.getTime()
@@ -711,6 +836,13 @@ if __name__ == '__main__':
             m3_motor.setVelocity(-motor_power[2])
             m4_motor.setVelocity(motor_power[3])
         
+            # ── Log PID data (landing mode) ──
+            log_pid_data('landing', robot.getTime(), altitude, height_desired,
+                         v_x, v_y, forward_desired, sideways_desired,
+                         roll, pitch, yaw_rate, x_global, y_global, motor_power,
+                         range_front_value, range_left_value, range_right_value,
+                         range_back_value, PID_crazyflie)
+        
             # Update the past time and global position for the next iteration
             past_time = robot.getTime()
             past_x_global = x_global
@@ -738,9 +870,25 @@ if __name__ == '__main__':
         m3_motor.setVelocity(-motor_power[2])
         m4_motor.setVelocity(motor_power[3])
         
+        # ── Log PID data (flying mode) ──
+        log_pid_data('flying', robot.getTime(), altitude, height_desired,
+                     v_x, v_y, forward_desired, sideways_desired,
+                     roll, pitch, yaw_rate, x_global, y_global, motor_power,
+                     range_front_value, range_left_value, range_right_value,
+                     range_back_value, PID_crazyflie)
+        
         # Update the past time and global position for the next iteration
         past_time = robot.getTime()
         past_x_global = x_global
         past_y_global = y_global
         
+    # ── Close the CSV log file when simulation ends ──
+    csv_file.close()
+    print(f"✅ PID data log saved to: {log_file_path}")
+
+    # ── Shutdown ROS 2 Node ──
+    if drone_ros is not None:
+        drone_ros.destroy_node()
+        rclpy.shutdown()
+        print("📡 [ROS 2] Drone node shutdown.")
         
